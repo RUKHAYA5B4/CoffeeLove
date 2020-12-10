@@ -1,0 +1,163 @@
+
+.spacer{
+    flex: 1 1 auto;
+} 
+
+.mat-toolbar {
+    background-color: rgba(44, 3, 5, 0.774) !important;
+    margin-bottom: 20px;
+    height: 50px;
+} 
+
+.a{
+      color: whitesmoke;
+      text-decoration: none;
+}
+.mat-button{
+    color:rgba(206, 217, 223, 0.952);
+    border: none;
+}
+.mat-button:hover{
+    color: rgba(128, 59, 124, 0.829);
+}
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  background:black;
+}
+.example-card {
+    max-width: 400px;
+    background-color: whitesmoke;
+}
+.example-card:hover{
+    box-shadow: blueviolet;
+}
+  
+h3:hover{
+  color:rgba(19, 106, 128, 0.801);
+}
+
+  
+img:hover {
+    box-shadow: 0 0 2px 2px rgb(16, 20, 19);
+}
+.row{
+    margin-bottom: 60px;
+}
+.ftco-footer .ftco-footer-widget h2:after {
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    content: '';
+    width: 70px;
+    height: 1px;
+    background: #fff;
+}
+.ftco-footer .ftco-footer-widget h2 {
+    font-weight: normal;
+    color: #fff;
+    margin-bottom: 40px;
+    font-size: 18px;
+    font-weight: 400;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.ftco-footer .ftco-footer-widget h2:after {
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    content: '';
+    width: 70px;
+    height: 1px;
+    background: #fff;
+}
+.ftco-footer p {
+    color: rgba(255, 255, 255, 0.7);
+}
+.ftco-animated {
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.ftco-footer {
+    font-size: 16px;
+    padding: 7em 0;
+    background: #252525;
+}
+
+.ftco-animate {
+    opacity: 0;
+    visibility: hidden;
+}
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+input[type=textbox], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+h3{
+    
+    text-align: left;
+    color: rgb(63, 68, 67);
+}
+
+img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  }
+
+ .review{
+     font-size: 1em;
+     margin-top: 10px;
+     
+ }
+ 
+
+ 
+
+body{ 
+width: 100%; 
+height: 100%; 
+margin: 0; 
+} 
+.mat-toolbar{
+    overflow: hidden;
+}
+
+@media screen and (max-width: 960px) {
+    .col-xs-4 {
+      width: 50%;
+    }
+  }
+  
+  /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .col-xs-4 {
+      width: 100%;
+    }
+    .mat-toolbar  a {
+        float: none;
+        width: 100%;
+      }
+  }
+
+  
+
+
+
+ 
+
+
+

@@ -1,0 +1,91 @@
+/* @media only screen and (min-width:320) */
+
+
+.mapboxgl-popup {
+    max-width: 400px;
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+.spacer{
+    flex: 1 1 auto;
+} 
+
+.mat-toolbar {
+    background-color: rgba(44, 3, 5, 0.774) !important;
+    
+    height: 50px;
+} 
+
+.a{
+      color: whitesmoke;
+      text-decoration: none;
+}
+.mat-button{
+    color:rgba(206, 217, 223, 0.952);
+    border: none;
+}
+.mat-button:hover{
+    color: rgba(128, 59, 124, 0.829);
+}
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  background:black;
+}
+.ftco-footer .ftco-footer-widget h2:after {
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    content: '';
+    width: 70px;
+    height: 1px;
+    background: #fff;
+}
+.ftco-footer .ftco-footer-widget h2 {
+    font-weight: normal;
+    color: #fff;
+    margin-bottom: 40px;
+    font-size: 18px;
+    font-weight: 400;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.ftco-footer .ftco-footer-widget h2:after {
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    content: '';
+    width: 70px;
+    height: 1px;
+    background: #fff;
+}
+.ftco-footer p {
+    color: rgba(255, 255, 255, 0.7);
+}
+.ftco-animated {
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.ftco-footer {
+    font-size: 16px;
+    padding: 7em 0;
+    background: #252525;
+}
+
+.ftco-animate {
+    opacity: 0;
+    visibility: hidden;
+}
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+
+

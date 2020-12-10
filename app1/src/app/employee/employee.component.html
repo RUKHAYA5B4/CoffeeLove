@@ -1,0 +1,131 @@
+<div class="body">
+
+<div class="row">
+    <div class="col-xs-12">
+      <div class="card">
+        <div class="card-content white-text">
+          <div class="row">
+            <div class="col-xs-5">
+              <form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
+                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="employeeService.selectedEmployee._id">
+                <div class="row">
+                  
+                  <div class="input-field col s12">
+                    <label>Name :
+                      <label class="red-text">*</label>
+                    </label><br>
+                    <input type="text" name="name" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.name" placeholder="Enter full name" required>
+                   
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label>Email :</label><br>
+                    <input type="text" name="email" #email="ngModel" [(ngModel)]="employeeService.selectedEmployee.email" >
+                    
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label>contactnumber :</label><br>
+                    <input type="text" name="contactnumber" #contactnumber="ngModel" [(ngModel)]="employeeService.selectedEmployee.contactnumber" >
+                    
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label>timings :</label><br>
+                    <input type="text" name="timings" #timings="ngModel" [(ngModel)]="employeeService.selectedEmployee.timings" >
+                    
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label>Description:</label><br>
+                    <input type="text" name="description" #description="ngModel" [(ngModel)]="employeeService.selectedEmployee.description">
+                    
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                      <label>Menu:</label><br>
+                      <input type="text" name="menu" #menu="ngModel" [(ngModel)]="employeeService.selectedEmployee.menu" >
+                      
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <label>Tagline: </label><br>
+                      <input type="text" name="tagline" #tagline="ngModel" [(ngModel)]="employeeService.selectedEmployee.tagline">
+                      
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <label>Address:</label><br>
+                      <input type="text" name="address" #address="ngModel" [(ngModel)]="employeeService.selectedEmployee.address">
+                      
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <label>Special:</label><br>
+                      <input type="text" name="special" #special="ngModel" [(ngModel)]="employeeService.selectedEmployee.special" >
+                      
+                    </div>
+                  </div>  
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <label>enter latitude:</label><br>
+                      <input type="text" name="latitude" #latitude="ngModel" [(ngModel)]="employeeService.selectedEmployee.latitude">
+                     
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <label>enter longitude:</label><br>
+                      <input type="text" name="longitude" #longitude="ngModel" [(ngModel)]="employeeService.selectedEmployee.longitude">
+                      
+                    </div>
+                  </div>
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <button class="btn btn-custom right" type="button" (click)="resetForm(employeeForm)">Reset</button>
+                    <button class="btn btn-custom right" type="submit" [disabled]="!employeeForm.valid">Submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col-xs-7">
+                <table class="responsive-table highlight">
+                  <h2>coffeeshop details</h2><br>
+                    <div *ngFor="let emp of employeeService.employees">
+                      {{emp.name}}
+                      {{emp.email}}
+                      {{emp.contactnumber}}
+                      {{emp.timings}}
+                      {{emp.description}}
+                     
+                      
+                          <a class="action-btn" (click)="onEdit(emp)">
+                            <i class="material-icons">edit</i>
+                          </a>
+                          <a class="action-btn" (click)="onDelete(emp._id,employeeForm)">
+                            <i class="material-icons">delete</i>
+                          </a>
+                          
+                    </div>
+                </table>
+                <a mat-button [routerLink]="['/masterpage']"><span class="glyphicon glyphicon-log-in"></span>logout</a>
+                <a mat-button [routerLink]="['/homepage']"><span class="glyphicon glyphicon-log-in"></span>homepage</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+</div>

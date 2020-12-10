@@ -1,0 +1,56 @@
+<div>
+  <img src="/assets/img/users.png" id="icon" alt="icon image"/> 
+</div>
+
+
+
+<form #signUpForm="ngForm"  (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)">
+<input type="text" #fullname="ngModel"  [(ngModel)]="userService.selectedUser.fullname" name="fullname" placeholder="Full Name"
+required [pattern]="fullnameRegex" [ngClass]="{'invalid-textbox' :signUpForm.submitted && !fullname.valid }">
+<div *ngIf="signUpForm.submitted && fullname.errors">
+  <label *ngIf="fullname.errors.required" class="validation-message">This field is required.</label> 
+<label *ngIf="fullname.errors.pattern" class="validation-message">Invalid structure! enter alpha characters.</label>
+</div> 
+<!-- <div *ngIf="signUpForm.submitted && !fullname.valid">
+  <label class="validation-message">This field is required.</label>
+</div> -->
+<input type="text" #email="ngModel" [(ngModel)]="userService.selectedUser.email" name="email" placeholder="email"
+required [pattern]="emailRegex"  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !email.valid }">
+<div *ngIf="signUpForm.submitted && email.errors">
+    <label *ngIf="email.errors.required" class="validation-message">This field is required.</label>
+    <label *ngIf="email.errors.pattern" class="validation-message">Invalid email address.</label>
+</div>
+<input type="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" name="password" placeholder="Password"
+  minlength="4" required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !password.valid }">
+<div *ngIf="signUpForm.submitted && password.errors">
+    <label *ngIf="password.errors.required" class="validation-message">This field is required.</label>
+    <label *ngIf="password.errors.minlength" class="validation-message">Enter atleast 4 characters.</label>
+</div>
+<input type="date" #dob="ngModel" [(ngModel)]="userService.selectedUser.dob" 
+name="dob" placeholder="Date of Birth" required>
+<input type="text" #nationality="ngModel" [(ngModel)]="userService.selectedUser.nationality" 
+name="nationality" placeholder="Nationality" required>
+<br>
+Gender:
+<input type="radio" #gender="ngModel" [(ngModel)]="userService.selectedUser.gender" 
+name="gender"  value="Male" placeholder="gender" required >Male
+<input type="radio" #gender="ngModel" [(ngModel)]="userService.selectedUser.gender" 
+name="gender"  value="female" placeholder="gender" required >Female<br>
+
+<input type="text" #aboutme="ngModel" [(ngModel)]="userService.selectedUser.aboutme" 
+name="aboutme"  placeholder="About Me" required>
+<br>
+<input type="submit" value="Sign Up">
+
+
+</form>
+
+<!-- Success -->
+<div class="success" *ngIf="showSucessMessage">
+    Saved successfully
+  </div>
+  
+  <!-- Error -->
+  <div class="alert" *ngIf="serverErrorMessages">
+    {{serverErrorMessages}}
+  </div>

@@ -1,0 +1,145 @@
+
+  .about{
+      background-color: #fff;
+      
+  } 
+  a{
+      overflow: auto;
+      display: block;
+  }
+  .about row{
+    display:flex;
+  }
+  .ftco-footer .ftco-footer-widget h2:after {
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    content: '';
+    width: 70px;
+    height: 1px;
+    background: #fff;
+}
+.ftco-footer .ftco-footer-widget h2 {
+    font-weight: normal;
+    color: #fff;
+    margin-bottom: 40px;
+    font-size: 18px;
+    font-weight: 400;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.ftco-footer .ftco-footer-widget h2:after {
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    content: '';
+    width: 70px;
+    height: 1px;
+    background: #fff;
+}
+.ftco-footer p {
+    color: rgba(255, 255, 255, 0.7);
+}
+.ftco-animated {
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.ftco-footer {
+    font-size: 16px;
+    padding: 7em 0;
+    background: #252525;
+}
+
+.ftco-animate {
+    opacity: 0;
+    visibility: hidden;
+}
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+
+img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  }
+ 
+/* .spacer {
+  display: flex;
+  flex-direction: right;
+  flex: 1 1 auto;
+
+} */
+.mat-toolbar {
+    background-color: rgba(71, 26, 41, 0.568) !important;
+} 
+.a{
+      color: whitesmoke;
+}
+.mat-button{
+    color:white;
+}
+.caption{
+  background-color: rgb(2, 53, 46);
+  text-align: center;
+  color: #fff;
+  
+}
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* Create four equal columns */
+  .column {
+    flex: 33.33%;
+    padding: 20px;
+  }
+  
+  
+  
+  @media screen and (max-width: 960px) {
+    .column {
+      flex: 33.33%;
+    }
+  }
+  
+  @media screen and (max-width: 449px) {
+    .row {
+      flex-direction: column;
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+  .hideforsmallnav{
+    display:none !important;
+  }
+
+}
+.spacer {
+  flex: 1 1 auto;
+}
+.fill-remaining-space{
+  flex: 1 1 auto;
+
+}
+
+
+  
+     
+
+
+
+ 
+
+
+ 
+
+
+
+
+

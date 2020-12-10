@@ -1,0 +1,29 @@
+
+<div class="wrapper">
+  <div id="formContent">
+      <h2 class=" underlineHover">Admin Login</h2>
+      <div>
+        <img src="/assets/img/single_user.png" id="icon" alt="icon image"/>
+    </div>
+    <form #Form="ngForm" (ngSubmit)="Form.valid && onSubmit(Form)">
+
+      <input type="password" name="password" #password="ngModel" [(ngModel)]="model.password" placeholder="Password" required minlength="4"
+        [ngClass]="{'invalid-textbox' :Form.submitted && !password.valid }">
+      <div *ngIf="Form.submitted && password.errors?.minlength">
+        <label class="validation-message">Minimum 4 characters.</label>
+      </div>
+      <input type="submit" value="Sign In">
+    </form>
+      
+      
+  
+
+  </div>
+</div>
+
+  
+
+  
+
+  
+

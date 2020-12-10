@@ -1,0 +1,74 @@
+<mat-toolbar  color="custom">
+    <span><mat-icon><img src="assets/img/logo1.png"></mat-icon></span>
+    <div class="spacer"></div>
+    <a mat-button [routerLink]="['/homepage']"><span class="glyphicon glyphicon-home"></span>Home</a>
+    <a mat-button [routerLink]="['/locatecafe']"><span class="glyphicon glyphicon-user"></span>Locate cafe</a>
+    <a mat-button [routerLink]="['/masterpage']"><span class="glyphicon glyphicon-log-in"></span>logout</a>
+    <a mat-button [routerLink]="['/userprofile']"><span class="glyphicon glyphicon-info-sign"></span>My profile</a>
+    <input type="text" class="form-control" [(ngModel)]="srchbox"  placeholder="Search Cafe" 
+    style="width:10%; padding-bottom: 10px;  padding-top: 10px"/>
+</mat-toolbar> 
+<div class="container">
+    <div *ngFor="let cafe of coffeeDetails | cafeeFilter:srchbox">
+      <div class="col-xs-4 col-xs-4 col-xs-4" ><br><br>
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title>{{cafe.name}}</mat-card-title>
+            <mat-card-subtitle>{{cafe.tagline}}</mat-card-subtitle>
+          </mat-card-header>
+          <a target="_blank" href="assets/img/cafea.jpg">
+          <img mat-card-image src="assets/img/cafea.jpg" alt="pic"></a>
+          <mat-card-content>
+            <h3>
+              Timings: {{cafe.timings}}<br>
+              Contact:{{cafe.contactnumber}}<br>
+              Address:{{cafe.address}}
+            </h3> 
+          </mat-card-content>
+          <mat-card-actions>
+              <button mat-button routerLink= "/shopid/{{cafe._id}}"><h4>Show More</h4></button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  <footer class="ftco-footer ftco-section img">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md-3">
+        <div class="ftco-footer-widget mb-4">
+          <h2 class="ftco-heading-2">About Us</h2>
+          <p>We suggest you the best nearby cafe for your refreshment and relaxation</p>
+          <h3>Damn Fine Coffee as always..!</h3>
+          
+        </div>
+      </div>
+      
+      <div class="col-md-2">
+         <div class="ftco-footer-widget mb-4 ml-md-4">
+          <h2 class="ftco-heading-2">Site Links</h2>
+          <ul class="list-unstyled">
+            <li><a href="#" class="py-2 d-block">Home</a></li>
+            <li><a href="#" class="py-2 d-block">About</a></li>
+            <li><a href="#" class="py-2 d-block">Coffe shops</a></li>
+           </ul>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="ftco-footer-widget mb-4">
+          <h2 class="ftco-heading-2">Have a Questions?</h2>
+          <div class="block-23 mb-3">
+            <ul>
+              <li><span class="text"><p>203 lakdi ka pool , Hyderabad, Telangana, India</p></span></li>
+              <li><a href="#"><span class="text">+91 6281156921</span></a></li>
+              <li><a href="#"><span class="text">cofftails@gmail.com</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+

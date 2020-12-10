@@ -1,0 +1,256 @@
+<mat-toolbar color="custom">
+    <span><mat-icon><img src="assets/img/logo1.png"></mat-icon></span>
+    <div class="spacer"></div>
+    <a mat-button [routerLink]="['/homepage']"><span class="glyphicon glyphicon-home"></span>Home</a>
+    <a mat-button [routerLink]="['/masterpage']"><span class="glyphicon glyphicon-log-out"></span>Logout</a>
+    <a mat-button routerLink='/userprofile'><span class="glyphicon glyphicon-log-out"></span>Bookmark</a>
+</mat-toolbar>
+<div class="background-image">
+  <div class="content">
+    <h1><b>Get Up ! Get Coffee <br> Be Happy..!</b></h1>
+    <h1><i><b>Lifes good...! with {{coffeeDetails.name}}</b></i></h1>
+  </div>
+</div>
+<div class="details">
+   
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6" ><br><br>
+          <mat-card class="example-card">
+            <mat-card-header>
+              <img mat-card-image src="assets/img/mmm.png" alt="pic">
+            </mat-card-header>
+              
+          </mat-card>
+        </div>
+
+         
+
+        
+
+        <div class="col-xs-3" ><br><br>
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title><h1 style="color: cornsilk;"><b><u>Our MenuCard</u></b></h1></mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <h2 id="caf">
+                <div *ngFor="let menu of coffeeDetails.menu">
+                {{menu}}
+                </div>
+                
+              </h2> 
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="col-xs-3" ><br><br>
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title><h1 style="color: cornsilk;"><b><u>Specials for you</u></b></h1></mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <h2 id="caf">
+                <div *ngFor="let cafee of coffeeDetails.special">
+                {{cafee}}
+                </div>
+                
+              </h2> 
+            </mat-card-content>
+          </mat-card>
+      </div>
+    </div>
+    </div>
+   
+
+    <div class="container">
+       
+        
+       
+       
+        <div class="row">
+           <div class="column">
+               <div class="thumbnail">
+                   <img src="assets/img/irish.jpg" class="img-responsive" alt="img.5">
+                   <div class="caption">
+                   </div>
+                </div>
+           </div>
+               
+            <div class="column">
+               <div class="thumbnail">
+                   <img src="assets/img/blackcof1.jpg" class="img-responsive" alt="img.5">
+                   <div class="caption">
+                   </div>
+                </div>
+            </div>
+               
+            <div class="column">
+               <div class="thumbnail">
+                   <img src="assets/img/expresso1.jpg" class="img-responsive" alt="img.5">
+                   <div class="caption">
+                   </div>
+                </div>
+            </div>
+               
+            <div class="column">
+               <div class="thumbnail">
+                   <img src= "assets/img/blackcof2.jpg" class="img-responsive" alt="img.5">
+                   <div class="caption">
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+
+    <h1 style="padding-bottom: 10px; text-align: center; color:white"> ABOUT THE {{coffeeDetails.name}}</h1>
+    <h2 id="cafee">Visiting Hours : {{coffeeDetails.timings}}<br>
+        Contact Number : {{coffeeDetails.contactnumber}}<br>
+        Find Us Here :   {{coffeeDetails.address}}<br>
+        Reach Us : {{coffeeDetails.email}}<br>
+        <h1 style="color: rgba(211, 66, 47, 0.692)"> "{{coffeeDetails.tagline}}"</h1>
+    </h2>
+
+      <div class="container my-3">
+        <div id="map" style="width: 100%; height: 500px; border-radius: 5px;"></div>
+      </div>
+
+    <div class="container">
+        <div class="row">
+
+        <div class="col-xs-6" ><br><br>
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title><h1 id="cafee"><i><u>share Your review</u></i></h1></mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <form>
+            
+                <input type="text" placeholder="enter your name" #name  required>
+                <input type="text" placeholder="write review" #review required>
+                <input type="submit" (click)="addreview(coffeeDetails._id,name.value,review.value)">
+            </form>
+            </mat-card-content>
+          </mat-card>
+          </div>
+
+          <div class="col-xs-6" ><br><br>
+            <mat-card class="example-card">
+              <mat-card-header>
+                <mat-card-title><h1 id="cafee"><i><u>share Your review</u></i></h1></mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <div class="ratinglayer" style="background-color:#2c251b ; width: 100%; padding:2%; margin-top: 2%; margin: 1%; color:#fff; border-radius: 28px;">
+                  <h2>RATE US</h2>
+                  <form>
+                    <mat-slider 
+                          class="example-margin"
+                          [disabled]=false
+                          [invert]="invert"
+                          [max]="max"
+                          [min]="min"
+                          [step]="step"
+                          [thumbLabel]="thumbLabel"
+                          [tickInterval]="getSliderTickInterval()"
+                          [vertical]="vertical" #slider
+                          >
+                      </mat-slider> 
+                      <button type="submit" style="background-color: brown; color:white"(click)="rateadd(slider.value,coffeeDetails._id)" value="post">Rate</button>
+                  </form>
+                </div>
+                
+              </mat-card-content>
+            </mat-card>
+          </div>
+          </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6">
+
+
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title><h3 style="color: crimson; text-align: left;"> CUSTOMER REVIEW:</h3><br></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <h2 id="caf">
+            <div *ngFor="let reviews of coffeeDetails.reviews">
+              {{reviews}}
+           
+            </div>
+            
+          </h2> 
+        </mat-card-content>
+      </mat-card>
+      </div>
+      <div class="col-xs-6">
+
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title><h3 style="color: crimson; text-align: left;"> CUSTOMER Rating:</h3><br></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <h2 id="caf">
+           
+            {{coffeeDetails.rating}}
+           
+            
+            
+          </h2> 
+        </mat-card-content>
+      </mat-card>
+      </div>
+      </div>
+
+    </div>
+</div>
+<footer class="ftco-footer ftco-section img">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md-3">
+        <div class="ftco-footer-widget mb-4">
+          <h2 class="ftco-heading-2">About Us</h2>
+          <p>We suggest you the best nearby cafe for your refreshment and relaxation</p>
+          <h3>Damn Fine Coffee as always..!</h3>
+          
+        </div>
+      </div>
+      
+      <div class="col-md-2">
+         <div class="ftco-footer-widget mb-4 ml-md-4">
+          <h2 class="ftco-heading-2">Site Links</h2>
+          <ul class="list-unstyled">
+            <li><a href="#" class="py-2 d-block">Home</a></li>
+            <li><a href="#" class="py-2 d-block">About</a></li>
+            
+            <li><a href="#" class="py-2 d-block">Coffe shops</a></li>
+            
+            
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">Have a Questions?</h2>
+            <div class="block-23 mb-3">
+              <ul>
+                <li><span class="text"><p>203 lakdi ka pool , Hyderabad, Telangana, India</p></span></li>
+                <li><a href="#"><span class="text">+91 6281156921 || 8309525424</span></a></li>
+              <li><a href="#"><span class="text">cofftails@gmail.com</span></a></li>
+              
+              </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</footer>
+
+
+ 
+
+
